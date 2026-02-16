@@ -68,15 +68,13 @@ else
 fi
 
 #Entering distribution phase - disable error handling (javadoc building fails here nontheless)
-set -e
+set +e
 
 #Generate distribution
 chmod +x make_distrib.sh
 if [ ${TARGETARCH} == 'amd64' ] || [ ${TARGETARCH} == 'arm64' ]; then
     ./make_distrib.sh linux64
 else
-    # After frequent errors on linux32 in the readme generation script, we disable it by wiping the contents of the script
-    echo "print('Skipping README generation on linux32')" > make_readme.py
     ./make_distrib.sh linux32
 fi
 
