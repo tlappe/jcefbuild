@@ -16,7 +16,7 @@ jobs:
   build-macosx-amd64:
     runs-on: macos-12
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       -
         name: Setup environment
         run: |
@@ -69,7 +69,7 @@ jobs:
           rm -rf "${HOME}/private_keys"
       -
         name: Export artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: macosx-amd64.tar.gz
           path: out/binary_distrib.tar.gz
