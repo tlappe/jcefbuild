@@ -68,7 +68,7 @@ else
 fi
 
 #Entering distribution phase - disable error handling (javadoc building fails here nontheless)
-set -e
+set +e
 
 #Generate distribution
 chmod +x make_distrib.sh
